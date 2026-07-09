@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05070d">
+<title>Space EVA — POV-Erlebnisse</title>
+<style>
+  :root{
+    --bg0:#05070d; --bg1:#0a0f1c; --panel:rgba(18,26,44,.55);
+    --line:rgba(120,150,200,.22); --ink:#e8eef7; --sub:#9fb0c8;
+    --cyan:#5ad1e6; --gold:#f2c879;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 700px at 78% -8%, rgba(90,209,230,.10), transparent 60%),
+      radial-gradient(900px 600px at 12% 108%, rgba(242,200,121,.08), transparent 55%),
+      linear-gradient(160deg,var(--bg1),var(--bg0));
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; align-items:center;
+    padding:clamp(20px,5vw,64px) 18px 40px;
+    position:relative; overflow-x:hidden;
+  }
+  /* dezente Sterne, rein CSS */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(1.4px 1.4px at 20% 30%, #fff, transparent),
+      radial-gradient(1.2px 1.2px at 70% 22%, #cfe6ff, transparent),
+      radial-gradient(1px 1px at 44% 68%, #fff, transparent),
+      radial-gradient(1.3px 1.3px at 85% 60%, #fff, transparent),
+      radial-gradient(1px 1px at 12% 80%, #bcd4ff, transparent),
+      radial-gradient(1px 1px at 60% 88%, #fff, transparent),
+      radial-gradient(1.2px 1.2px at 33% 14%, #fff, transparent);
+    opacity:.55;
+  }
+  .wrap{position:relative; z-index:1; width:100%; max-width:860px}
+  header{text-align:center; margin-bottom:clamp(24px,5vw,48px)}
+  .badge{
+    display:inline-block; font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--cyan); border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; margin-bottom:18px; background:rgba(90,209,230,.06);
+  }
+  h1{font-size:clamp(28px,7vw,46px); font-weight:700; line-height:1.08; letter-spacing:-.01em}
+  h1 span{color:var(--gold)}
+  .lead{color:var(--sub); margin-top:14px; font-size:clamp(14px,2.6vw,17px); line-height:1.6}
+  .grid{display:grid; grid-template-columns:1fr; gap:16px}
+  @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+  .card{
+    display:flex; flex-direction:column; text-decoration:none; color:inherit;
+    background:var(--panel); border:1px solid var(--line); border-radius:18px;
+    padding:22px 22px 20px; backdrop-filter:blur(8px);
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .card:hover,.card:focus-visible{
+    transform:translateY(-4px); border-color:rgba(90,209,230,.5);
+    box-shadow:0 12px 40px rgba(0,0,0,.45), 0 0 0 1px rgba(90,209,230,.15) inset;
+    outline:none;
+  }
+  .card .k{font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--cyan); margin-bottom:10px}
+  .card h2{font-size:20px; font-weight:650; line-height:1.2}
+  .card p{color:var(--sub); font-size:14px; line-height:1.55; margin-top:8px; flex:1}
+  .meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:16px}
+  .tag{font-size:11px; color:var(--sub); border:1px solid var(--line); border-radius:6px; padding:3px 8px}
+  .go{margin-top:16px; font-weight:600; color:var(--gold); font-size:14px}
+  .go::after{content:" →"; transition:margin .18s ease}
+  .card:hover .go::after{margin-left:4px}
+  footer{margin-top:34px; text-align:center; color:var(--sub); font-size:12px; line-height:1.7; opacity:.85}
+  footer a{color:var(--cyan); text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">NASA · Public Domain · WebGL</div>
+      <h1>Space <span>EVA</span> — POV-Erlebnisse</h1>
+      <p class="lead">Interaktive Außenbord-Einsätze im Browser. Ziehen zum Umsehen, antippen für Infos.<br>Für iPhone-Hochformat optimiert · offline-fähig (alle Assets eingebettet).</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="Gateway_EVA_Panorama_ULTRA_2025.html">
+        <div class="k">Artemis · EVA-3</div>
+        <h2>Lunar Gateway — NRHO</h2>
+        <p>POV vom vorderen Handlauf des Gateway im 9:2-NRHO-Orbit. Echter Sternhimmel (Yale-Katalog), Planeten für Juli 2026 real gerechnet, NASA-Modelle, geriggte Hände, Kepler-Physik zuschaltbar.</p>
+        <div class="meta"><span class="tag">Three.js r128</span><span class="tag">NRHO-Kepler</span><span class="tag">~32 MB</span></div>
+        <div class="go">Erlebnis starten</div>
+      </a>
+
+      <a class="card" href="ISS%20EVA%20Panorama%20NASA.html">
+        <div class="k">ISS · Expedition</div>
+        <h2>ISS EVA — 360° POV</h2>
+        <p>Reparatureinsatz an der ISS-Struktur mit echtem NASA-ISS-Modell. 360°-Panorama aus Original-EVA-Fotografie, mit Gargantua-Schwarzloch-Feature.</p>
+        <div class="meta"><span class="tag">Three.js r128</span><span class="tag">NASA-ISS</span><span class="tag">~12 MB</span></div>
+        <div class="go">Erlebnis starten</div>
+      </a>
+    </div>
+
+    <footer>
+      3D-Modelle &amp; Bilddaten: <a href="https://nasa3d.arc.nasa.gov/">NASA 3D Resources</a> · Public Domain<br>
+      Sternkatalog: Yale Bright Star Catalogue · Sternbilder: IAU · gerendert mit Three.js
+    </footer>
+  </div>
+</body>
+</html>
